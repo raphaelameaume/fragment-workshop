@@ -2,9 +2,9 @@ let draw = "■";
 let nodraw = "□";
 
 let shape1 = `
-□ □ □
-□ □ □
-□ □ □
+■ ■ ■
+■ □ ■
+■ ■ ■
 `;
 
 let shape2 = `

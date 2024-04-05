@@ -2,6 +2,9 @@ import p5 from "p5";
 import { drawGrid, drawShape } from "../shared";
 import { shapes } from "../shapes";
 
+// https://coolors.co/
+let colors = ["9c89b8", "f0a6ca", "efc3e6", "f0e6ef", "b8bedd"];
+
 /**
  * @param {object} params
  * @param {HTMLCanvasElement} params.canvas
@@ -26,6 +29,7 @@ export function setup({ p, width, height }) {}
  * @param {number} params.playcount
  */
 export function draw({ p, width, height }) {
+	p.randomSeed(seed);
 	p.background(255, 255, 255);
 
 	let count = props.count.value;
@@ -90,11 +94,28 @@ export function draw({ p, width, height }) {
 		drawGrid(p, cells);
 	}
 
+	let shapeOffset = p.floor(p.random(0, shapes.length));
+	let colorOffset = p.floor(p.random(0, colors.length));
+	let colorIndex = props.color.value;
+
 	cells.forEach((cell, index) => {
 		p.noStroke();
 		p.fill(0);
 
 		let shape = props.shape.value;
+		shape = p.floor(p.random(0, shapes.length));
+		shape = (index + shapeOffset) % shapes.length;
+		// shape = cell.col % shapes.length;
+		// shape = cell.row % shapes.length;
+
+		// colorIndex = p.floor(p.random(0, colors.length));
+		// colorIndex = (cell.col * cell.row) % colors.length;
+		colorIndex = (index + colorOffset) % colors.length;
+
+		let color = colors[colorIndex];
+
+		p.noStroke();
+		p.fill(`#${color}`);
 
 		drawShape(p, shapes[shape], cell.x, cell.y, cell.size, cell.size);
 	});
@@ -102,6 +123,8 @@ export function draw({ p, width, height }) {
 
 export let rendering = "p5";
 export let fps = 0;
+
+let seed = 0;
 
 export let props = {
 	margin: {
@@ -136,6 +159,20 @@ export let props = {
 		},
 	},
 	showGrid: {
-		value: true,
+		value: false,
+	},
+	color: {
+		value: 0,
+		params: {
+			options: colors.map((color, index) => ({
+				label: `#${color}`,
+				value: index,
+			})),
+		},
+	},
+	generate: {
+		value: () => {
+			seed = Math.random() * 1000;
+		},
 	},
 };

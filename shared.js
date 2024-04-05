@@ -14,8 +14,8 @@ export const countY = 3;
 export function drawShape(p, shape, posX, posY, width, height) {
 	let rows = shape.trim().split("\n");
 
-	let cellWidth = Math.ceil(width / countX);
-	let cellHeight = Math.ceil(height / countY);
+	let cellWidth = width / countX;
+	let cellHeight = height / countY;
 
 	for (let i = 0; i < countY; i++) {
 		let y = i * cellHeight;
@@ -26,7 +26,12 @@ export function drawShape(p, shape, posX, posY, width, height) {
 			let shape = cols[j];
 
 			if (shape === "■") {
-				p.rect(posX + x, posY + y, cellWidth, cellHeight);
+				p.rect(
+					posX + x,
+					posY + y,
+					Math.ceil(cellWidth),
+					Math.ceil(cellHeight),
+				);
 			}
 		}
 	}
@@ -53,11 +58,11 @@ export function drawShapeGrid(p, width, height) {
 	}
 }
 
-export function drawGrid(p, cells) {
+export function drawGrid(p, cells, color = "rgb(255, 0, 0)") {
 	for (let i = 0; i < cells.length; i++) {
 		let cell = cells[i];
 
-		p.stroke(255, 0, 0);
+		p.stroke(color);
 		p.noFill();
 		p.rect(cell.x, cell.y, cell.size, cell.size);
 	}

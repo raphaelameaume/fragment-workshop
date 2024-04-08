@@ -67,3 +67,44 @@ export function drawGrid(p, cells, color = "rgb(255, 0, 0)") {
 		p.rect(cell.x, cell.y, cell.size, cell.size);
 	}
 }
+
+export function createGridCells(
+	width,
+	height,
+	cols = 10,
+	rows = 10,
+	colGap = 4,
+	rowGap = 4,
+	margin = 0,
+) {
+	let cellSize = Math.min(
+		(width - colGap * (cols - 1) - margin * 2) / cols,
+		(height - rowGap * (rows - 1) - margin * 2) / rows,
+	);
+
+	let offsetX = (cellSize * cols + colGap * (cols - 1) - width) * 0.5;
+	let offsetY = (cellSize * rows + rowGap * (rows - 1) - height) * 0.5;
+
+	let cells = [];
+
+	for (let i = 0; i < cols; i++) {
+		let x = i * cellSize - offsetX + i * colGap;
+		for (let j = 0; j < rows; j++) {
+			let y = j * cellSize - offsetY + j * rowGap;
+
+			let cell = {
+				col: i,
+				row: j,
+				x,
+				y,
+				size: cellSize,
+				cols,
+				rows,
+			};
+
+			cells.push(cell);
+		}
+	}
+
+	return cells;
+}

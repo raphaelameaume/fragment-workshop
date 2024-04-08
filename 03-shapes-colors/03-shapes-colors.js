@@ -1,5 +1,5 @@
 import p5 from "p5";
-import { drawGrid, drawShape } from "../shared";
+import { createGridCells, drawGrid, drawShape } from "../shared";
 import { shapes } from "../shapes";
 
 // https://coolors.co/
@@ -35,50 +35,6 @@ export function draw({ p, width, height }) {
 	let count = props.count.value;
 	let gap = props.gap.value;
 	let margin = props.margin.value;
-
-	function createGridCells(
-		width,
-		height,
-		cols = 10,
-		rows = 10,
-		colGap = 4,
-		rowGap = 4,
-		margin = 0,
-	) {
-		let cellSize =
-			(Math.min(
-				width - colGap * (cols - 1),
-				height - rowGap * (rows - 1),
-			) -
-				margin * 2) /
-			count;
-
-		let offsetX = (cellSize * cols + gap * (cols - 1) - width) * 0.5;
-		let offsetY = (cellSize * rows + gap * (rows - 1) - height) * 0.5;
-
-		let cells = [];
-
-		for (let i = 0; i < cols; i++) {
-			let x = i * cellSize - offsetX + i * gap;
-			for (let j = 0; j < rows; j++) {
-				let y = j * cellSize - offsetY + j * gap;
-
-				let cell = {
-					col: i,
-					row: j,
-					x,
-					y,
-					size: cellSize,
-					cols,
-					rows,
-				};
-
-				cells.push(cell);
-			}
-		}
-
-		return cells;
-	}
 
 	const cells = createGridCells(
 		width,

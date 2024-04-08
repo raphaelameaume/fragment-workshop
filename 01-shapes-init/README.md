@@ -44,3 +44,5 @@ export let props = {
 ```
 
 The `export let props={}` is a way to hook into Fragment interface to build GUI controls on the fly. Based on the `property.value` type and `property.params`, Fragment will infer the type of props you want. Here we have a `<select>` based on `params.options` and a `<input type="checkbox">` based on `showGrid.value` being a boolean.
+
+10. Go to [02-shapes-grid/README.md](./02-shapes-grid/README.md) to continue.

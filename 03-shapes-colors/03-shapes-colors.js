@@ -3,7 +3,8 @@ import { createGridCells, drawGrid, drawShape } from "../shared";
 import { shapes } from "../shapes";
 
 // https://coolors.co/
-let colors = ["9c89b8", "f0a6ca", "efc3e6", "f0e6ef", "b8bedd"];
+let colors = ["000000"];
+// colors = ["9c89b8", "f0a6ca", "efc3e6", "f0e6ef", "b8bedd"];
 
 /**
  * @param {object} params
@@ -51,7 +52,7 @@ export function draw({ p, width, height }) {
 	}
 
 	let shapeOffset = p.floor(p.random(0, shapes.length));
-	let colorOffset = p.floor(p.random(0, colors.length));
+
 	let colorIndex = props.color.value;
 
 	cells.forEach((cell, index) => {
@@ -60,13 +61,9 @@ export function draw({ p, width, height }) {
 
 		let shape = props.shape.value;
 		shape = p.floor(p.random(0, shapes.length));
-		shape = (index + shapeOffset) % shapes.length;
+		// shape = (index + shapeOffset) % shapes.length;
 		// shape = cell.col % shapes.length;
 		// shape = cell.row % shapes.length;
-
-		// colorIndex = p.floor(p.random(0, colors.length));
-		// colorIndex = (cell.col * cell.row) % colors.length;
-		colorIndex = (index + colorOffset) % colors.length;
 
 		let color = colors[colorIndex];
 
@@ -84,7 +81,7 @@ let seed = 0;
 
 export let props = {
 	margin: {
-		value: 10,
+		value: 100,
 		params: {
 			min: 0,
 			max: 100,
@@ -132,3 +129,5 @@ export let props = {
 		},
 	},
 };
+
+export let exportDir = `./exports`;

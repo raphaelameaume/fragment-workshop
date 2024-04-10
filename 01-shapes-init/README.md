@@ -5,7 +5,7 @@
 
 ```bash
 cd 01-shapes-init
-npx fragment-tools 01-shapes-init.js`
+npx fragment-tools 01-shapes-init.js
 ```
 
 3. Open the URL prompted by the command line in your browser. You should see something like this:

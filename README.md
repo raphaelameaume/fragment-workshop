@@ -10,8 +10,6 @@
 npx fragment-tools 01-shapes-init/01-shapes-init.js`
 ```
 
-The command line should prompt a URL to open in the browser. The port can vary depending on available ports on your machine.
-
-[http://localhost:3000](http://localhost:3000)
+The command line should prompt a URL to open in the browser: [http://localhost:3000](http://localhost:3000). The port can vary depending on available ports on your machine.
 
 4. Go to [01-shapes-init/README.md](./01-shapes-init/README.md) to start.

@@ -5,7 +5,7 @@
 
 ```bash
 cd 02-shapes-grid
-npx fragment-tools 02-shapes-grid.js`
+npx fragment-tools 02-shapes-grid.js
 ```
 
 3. Open the URL prompted by the command line in your browser. You should see new GUI controls that you can play with: `count`, `margin`, `gap`.

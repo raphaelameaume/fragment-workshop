@@ -1,4 +1,4 @@
-# Shapes grid
+# Shapes colors
 
 1. Open the repository in your code editor.
 2. Run the following commands in the terminal from the root of this repository:
@@ -32,9 +32,9 @@ export let setup = () => {
 };
 ```
 
-5. Let's add some colors. At the top of the file, uncomment the line 7. From the "color" dropdown, change the color applied to the shapes.
+6. Let's add some colors. At the top of the file, uncomment the line 7. From the "color" dropdown, change the color applied to the shapes.
 
-6. A single color is a bit boring, let's apply a different color per shape from the palette. In the draw() function, let's change `colorIndex` in different ways like we did for the shapes.
+7. A single color is a bit boring, let's apply a different color per shape from the palette. In the draw() function, let's change `colorIndex` in different ways like we did for the shapes.
 
 ```js
 // colorIndex = p.floor(p.random(0, colors.length));
@@ -44,7 +44,7 @@ export let setup = () => {
 // colorIndex = (index + colorOffset) % colors.length;
 ```
 
-6. Great. Now let's change the background color. To pick a color, let's create a controller for it. At the end of the file, add a new property to props:
+8. Great. Now let's change the background color. To pick a color, let's create a controller for it. At the end of the file, add a new property to props:
 
 ```js
 export let props = {
@@ -57,7 +57,7 @@ export let props = {
 
 You should see a new control appear under Parameters with a white rectangle. If you click on it, this will open a color picker. Fragment supports different types of color definition: RGB and HSL strings, hexadecimal strings, objects...
 
-7. We can't see any visible changes on the canvas because we're still not using the value of this prop. Let's change that by passing the value to `p.background()`.
+9. We can't see any visible changes on the canvas because we're still not using the value of this prop. Let's change that by passing the value to `p.background()`.
 
 ```js
 p.background(props.background.value);

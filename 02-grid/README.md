@@ -4,8 +4,8 @@
 2. Run the following commands in the terminal from the root of this repository:
 
 ```bash
-cd 02-shapes-grid
-npx fragment-tools 02-shapes-grid.js
+cd 02-grid
+npx fragment-tools shapes.js
 ```
 
 3. Open the URL prompted by the command line in your browser. You should see new GUI controls that you can play with: `count`, `margin`, `gap`.
@@ -57,7 +57,7 @@ export let draw = ({ p }) => {
 
 Now if you edit the `margin` or the `gap` the shapes stays the same. Let's add a control to loop through different results.
 
-In `02-shapes-grid.js`, add a new property to the `props` object at the end of the file called `generate` with the value being a function changing the seed.
+In `02-grid/shapes.js`, add a new property to the `props` object at the end of the file called `generate` with the value being a function changing the seed.
 
 ```js
 export let props = {

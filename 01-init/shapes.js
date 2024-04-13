@@ -38,7 +38,6 @@ export function draw({ p, width, height }) {
 }
 
 export let rendering = "p5";
-// export let fps = 0;
 
 export let props = {
 	shape: {
@@ -54,3 +53,5 @@ export let props = {
 		value: true,
 	},
 };
+
+// export let fps = 0;

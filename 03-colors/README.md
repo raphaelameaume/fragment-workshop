@@ -4,11 +4,11 @@
 2. Run the following commands in the terminal from the root of this repository:
 
 ```bash
-cd 03-shapes-colors
-npx fragment-tools 03-shapes-colors.js
+cd 03-colors
+npx fragment-tools shapes.js
 ```
 
-3. Open the URL prompted by the command line in your browser. Since we're starting from a new sketch, you might want to copy/paste the explorations made in `02-shapes-grid.js`.
+3. Open the URL prompted by the command line in your browser. Since we're starting from a new sketch, you might want to copy/paste the explorations made in `02-grid/shapes.js`.
 
 4. Fragment implements different types of _Triggers_. Triggers are function that are called from different user inputs. Right now, Fragment has Mouse, Keyboard and MIDI triggers. They can be defined on the fly from the interface or directly from the code. Let's create a trigger from the interface by clicking on "generate". You should see a new button "Add a new trigger". From the dropdown, select "Mouse", and "onClick" in the second dropdown.
 

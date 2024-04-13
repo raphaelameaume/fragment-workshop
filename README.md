@@ -14,7 +14,7 @@ npm install p5
 
 ```bash
 // with npx
-npx fragment-tools 01-init/shapes.js`
+npx fragment-tools 01-init/shapes.js
 
 // after npm install fragment-tools -g
 fragment 01-init/shapes.js
@@ -23,4 +23,4 @@ fragment 01-init/shapes.js
 The command line should prompt a URL to open in the browser: [http://localhost:3000](http://localhost:3000). The port can vary depending on available ports on your machine.
 
 5. Open the repository if in your favorite code editor.
-6. Go to [01-shapes-init/README.md](./01-shapes-init/README.md) to start.
+6. Go to [01-init/README.md](./01-init/README.md) to start.
